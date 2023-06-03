@@ -14,8 +14,16 @@ export class FeuPokemonComponent implements OnInit {
     { id : 2, name : 'Aflamanoir' },
     { id : 3, name : 'Goupix' },
     ];
-    
+
+// Créons une variable dans notre script pour contenir le feu sélectionné
+selectedFeu!: Feu;
+
   constructor() { }
+  
+// Nous exécuterons une méthode selectHero qui prendra en paramètre le feu à sélectionner
+  selectFeu(feu: Feu) {
+    this.selectedFeu = feu;
+  }
 
   ngOnInit() {
   }  

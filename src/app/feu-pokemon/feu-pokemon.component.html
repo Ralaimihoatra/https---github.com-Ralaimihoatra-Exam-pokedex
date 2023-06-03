@@ -1,5 +1,18 @@
 <p>feu-pokemon works!</p>
 
-<ul class="feus">
+<!-- <ul class="feus"> 
     <li *ngFor="let feu of feus"><span class="badge">{{ feu.id }}</span> {{ feu.name}}</li>
+</ul> -->
+
+<!-- Et maintenant, faisons appel à cette fonction lors du clic sur un feu -->
+<ul class="feus">
+    <li *ngFor="let feu of feus" [class.selected]="selectedFeu == feu" (click)="selectFeu(feu)">
+        <span class="badge">{{ feu.id }}</span> {{ feu.name }}
+    </li>
+    <!-- Affichons les détails du héros sélectionné -->
+    <div *ngIf="selectedFeu">
+        <h2>Détails de {{selectedFeu.name | uppercase}} : </h2>
+        <div><span>id: </span>{{selectedFeu.id}}</div>
+    </div>
 </ul>
+    
