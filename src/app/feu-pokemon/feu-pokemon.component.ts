@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeuPokemonComponent implements OnInit {
 
+  feus = [
+    { id : 1, name : 'Arcanin' },
+    { id : 2, name : 'Aflamanoir' },
+    { id : 3, name : 'Goupix' },
+    ];
+    
   constructor() { }
-  
+
   ngOnInit() {
   }  
 }
