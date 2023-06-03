@@ -15,7 +15,15 @@ export class FoudrePokemonComponent implements OnInit {
     { id : 3, name : 'Duralugon' },
     ];
 
+    // Créons une variable dans notre script pour contenir le foudre sélectionné
+  selectedFoudre!: Foudre;
+
   constructor() { }
+
+  // Nous exécuterons une méthode selectHero qui prendra en paramètre le foudre à sélectionner
+  selectFoudre(foudre: Foudre) {
+    this.selectedFoudre = foudre;
+  }
   
   ngOnInit() {
 

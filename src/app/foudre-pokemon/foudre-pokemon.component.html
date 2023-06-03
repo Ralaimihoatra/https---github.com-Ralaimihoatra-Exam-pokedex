@@ -1,5 +1,18 @@
 <p>foudre-pokemon works!</p>
 
-<ul class="foudres">
+<!--<ul class="foudres">
     <li *ngFor="let foudre of foudres"><span class="badge">{{ foudre.id }}</span> {{ foudre.name}}</li>
+</ul>-->
+
+<!-- Et maintenant, faisons appel à cette fonction lors du clic sur un feu -->
+<ul class="foudres">
+    <li *ngFor="let foudre of foudres" [class.selected]="selectedFoudre == foudre" (click)="selectFoudre(foudre)">
+        <span class="badge">{{ foudre.id }}</span> {{ foudre.name }}
+    </li>
+    <!-- Affichons les détails du héros sélectionné -->
+    <div *ngIf="selectedFoudre">
+        <h2>Détails de {{selectedFoudre.name | uppercase}} : </h2>
+        <div><span>id: </span>{{selectedFoudre.id}}</div>
+    </div>
 </ul>
+    

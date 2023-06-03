@@ -1,5 +1,18 @@
 <p>plante-pokemon works!</p>
 
-<ul class="plantes">
+<!--<ul class="plantes">
     <li *ngFor="let plante of plantes"><span class="badge">{{ plante.id }}</span> {{ plante.name}}</li>
+</ul>-->
+
+<!-- Et maintenant, faisons appel à cette fonction lors du clic sur un feu -->
+<ul class="plantes">
+    <li *ngFor="let plante of plantes" [class.selected]="selectedPlante == plante" (click)="selectPlante(plante)">
+        <span class="badge">{{ plante.id }}</span> {{ plante.name }}
+    </li>
+    <!-- Affichons les détails du héros sélectionné -->
+    <div *ngIf="selectedPlante">
+        <h2>Détails de {{selectedPlante.name | uppercase}} : </h2>
+        <div><span>id: </span>{{selectedPlante.id}}</div>
+    </div>
 </ul>
+    
