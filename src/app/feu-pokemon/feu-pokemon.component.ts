@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import Feu from '../types/feu.type';
+
 @Component({
   selector: 'app-feu-pokemon',
   templateUrl: './feu-pokemon.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeuPokemonComponent implements OnInit {
 
-  feus = [
+  feus: Feu[]  = [
     { id : 1, name : 'Arcanin' },
     { id : 2, name : 'Aflamanoir' },
     { id : 3, name : 'Goupix' },

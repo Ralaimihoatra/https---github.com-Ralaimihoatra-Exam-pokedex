@@ -1,5 +1,5 @@
 export default class Foudre {
-    id: number;
-    name: string;
+    id!: number;
+    name!: string;
     }
     
